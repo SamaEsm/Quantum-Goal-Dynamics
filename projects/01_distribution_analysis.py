@@ -36,5 +36,25 @@ plt.show()
 
 
 #پروژه سوم
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv('sensor_data.csv')
+df['P_T_Ratio'] = df['Pressure'] / df['Temperature']
+idx_max_pressure = df['Pressure'].idxmax()
+max_row = df.loc[idx_max_pressure]
+
+print("--- نتیجه تحلیل سنسور ---")
+print(f"بیشترین فشار ثبت شده در ردیف شماره {idx_max_pressure} است:")
+print(max_row)
+print("-----------------------")
+plt.figure(figsize=(8, 5))
+plt.scatter(df['Temperature'], df['Pressure'], color='purple', label='Data Points')
+plt.plot(df['Temperature'], df['Pressure'], color='gold', alpha=0.3)
+plt.title('Physics Lab: Pressure vs Temperature', fontsize=14)
+plt.xlabel('Temperature (K)', fontsize=12)
+plt.ylabel('Pressure (kPa)', fontsize=12)
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.legend()
+plt.show()
 
 
