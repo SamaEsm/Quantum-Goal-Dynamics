@@ -8,6 +8,32 @@ x= np. array([
     [80,2,5],
     [200,4,2]
 ])
+#تمرین1
+A=np. array([
+      [1,3],
+      [2,4]
+])
+B=np. array([
+      [5,7]
+      [6,8]
+])
+C=np.dot(A,B)
+print(C)
+
+#تمرین2
+A= np.array([
+      [1,2,3]
+      [4,5,6]
+])
+AT=A.T
+print(AT)
+
+#تمرین3
+v=np. array([
+      [2,4,6]
+])
+W=v@v
+print(W)
 #ضزب بردار در وزن ها 
 x= np.array([3,4])
 w=np. array([2,5])
